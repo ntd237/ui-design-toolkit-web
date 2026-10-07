@@ -1,6 +1,6 @@
 # UI Design Toolkit — Landing Page
 
-Trang giới thiệu (landing page) cho **UI Design Toolkit** — bộ 6 skill ZCode chuyên thiết kế giao diện UI/UX đa nền tảng (Web App, Mobile App, Desktop App, Game UI). Trang được viết bằng **HTML/CSS/JS thuần**, tự áp dụng đúng triết lý thiết kế của chính bộ toolkit mà nó giới thiệu.
+Trang giới thiệu (landing page) cho **UI Design Toolkit** — bộ 6 skills ZCode chuyên thiết kế giao diện UI/UX đa nền tảng (Web App, Mobile App, Desktop App, Game UI). Trang được viết bằng **HTML/CSS/JS thuần**, tự áp dụng đúng triết lý thiết kế của chính bộ toolkit mà nó giới thiệu.
 
 ## Mục lục
 
@@ -67,7 +67,7 @@ Các tương tác có sẵn trên trang:
 |-----------|-----------|
 | Chuyển sáng/tối | Nút mặt trời/mặt trăng ở góc phải header |
 | Menu mobile (<768px) | Nút hamburger, đóng bằng `Escape` hoặc click ngoài |
-| Điều hướng nhanh | Các link trong header: Cách hoạt động · 6 Skill · Nền tảng |
+| Điều hướng nhanh | Các link trong header: Cách hoạt động · 6 skills · Nền tảng |
 
 Tuỳ chọn: chỉnh theme mặc định bằng cách sửa biến `--color-*` trong khối `:root` và `[data-theme="dark"]` của `style.css` — toàn bộ màu sắc đều là token, không có hex rải rác trong markup.
 
@@ -79,7 +79,7 @@ ui-design-toolkit-web/
 ├── style.css           # Design tokens + toàn bộ style (2 theme, 4 breakpoint)
 ├── script.js           # Dark mode, hamburger menu, scroll reveal
 └── .agents/
-    └── skills/         # Định nghĩa 6 skill của bộ toolkit (SKILL.md)
+    └── skills/         # Định nghĩa 6 skills của bộ toolkit (SKILL.md)
 ```
 
 ## License
