@@ -84,7 +84,7 @@ ui-design-toolkit-web/
 
 ## License
 
-Dự án hiện chưa gắn license. Nếu bạn định phát hành công khai, đề xuất thêm file `LICENSE` (MIT hoặc Apache-2.0) vào thư mục gốc.
+Dự án được phát hành công khai dưới giấy phép [MIT](LICENSE) — mọi người đều được phép sử dụng, sao chép, sửa đổi và phân phối, kể cả trong sản phẩm thương mại, với điều kiện giữ nguyên bản quyền trong file LICENSE.
 
 ## Liên hệ
 

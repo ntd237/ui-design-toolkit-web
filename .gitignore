@@ -16,4 +16,3 @@ temp/
 
 # OS/browser caches từ quá trình kiểm thử
 .ms-playwright/
-.agents/
