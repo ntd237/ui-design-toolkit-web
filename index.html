@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UI Design Toolkit — bộ 6 skill UI thiết kế giao diện đa nền tảng theo pipeline 6 bước: UX flow, design token, responsive, WCAG AA, giao diện mẫu HTML/CSS/JS thuần.">
+  <title>UI Design Toolkit — Pipeline thiết kế giao diện đa nền tảng</title>
+  <script>
+    (function () {
+      var saved = localStorage.getItem('uidt-theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Bỏ qua điều hướng, đến nội dung chính</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="UI Design Toolkit — về đầu trang">
+        <svg class="brand-mark" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+          <rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="9" cy="9" r="2.2" fill="currentColor"/>
+          <path d="M3.5 16.5 9 12l4 3 4-5 3.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">UI Design <strong>Toolkit</strong></span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Điều hướng chính">
+        <ul>
+          <li><a href="#pipeline">Cách hoạt động</a></li>
+          <li><a href="#skills">6 Skill</a></li>
+          <li><a href="#platforms">Nền tảng</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Chuyển giao diện sáng / tối">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5 5l1.7 1.7M17.3 17.3 19 19M19 5l-1.7 1.7M6.7 17.3 5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+            <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+          <span class="nav-toggle-box" aria-hidden="true">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </span>
+          <span class="visually-hidden">Mở / đóng menu điều hướng</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Bộ skill UI · 6 giai đoạn · Vanilla HTML/CSS/JS</p>
+          <h1 id="hero-title">Thiết kế giao diện có kỷ luật — từ ý định đến giao diện chạy được.</h1>
+          <p class="lead">
+            UI Design Toolkit là bộ 6 skill chuyên sâu về thiết kế UI/UX đa nền tảng:
+            Web App, Mobile App, Desktop App và Game UI. Mỗi dự án đi qua một pipeline
+            cố định — phân tích nền tảng, kiến trúc luồng UX, design token, responsive,
+            kiểm toán WCAG AA — rồi kết thúc bằng giao diện mẫu viết bằng
+            <strong>HTML/CSS/JS thuần</strong>, không build, không dependency.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#pipeline">Xem quy trình 6 bước</a>
+            <a class="btn btn-secondary" href="#skills">Khám phá 6 skill</a>
+          </div>
+          <dl class="hero-stats">
+            <div><dt>6</dt><dd>skill chuyên biệt</dd></div>
+            <div><dt>4</dt><dd>breakpoint responsive</dd></div>
+            <div><dt>6</dt><dd>trạng thái component</dd></div>
+            <div><dt>AA</dt><dd>chuẩn WCAG 2.2</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero-visual" aria-label="Minh họa design token của toolkit">
+          <div class="token-card" role="img">
+            <p class="token-card-title">Design tokens</p>
+            <div class="token-row">
+              <span class="swatch swatch-60"></span>
+              <span class="token-label"><strong>60%</strong> Neutral nền</span>
+            </div>
+            <div class="token-row">
+              <span class="swatch swatch-30"></span>
+              <span class="token-label"><strong>30%</strong> Hệ thống chữ</span>
+            </div>
+            <div class="token-row">
+              <span class="swatch swatch-10"></span>
+              <span class="token-label"><strong>10%</strong> Accent CTA</span>
+            </div>
+            <div class="token-divider"></div>
+            <p class="type-sample" lang="vi"><span class="type-aa">Aa</span> Huyền sắc hỏi ngã nặng</p>
+            <p class="token-meta">Line-height 1.4–1.6 · zero clipping dấu tiếng Việt</p>
+            <div class="token-divider"></div>
+            <div class="spacing-chips" aria-label="Thang spacing base-8">
+              <span style="--s:4px"></span><span style="--s:8px"></span><span style="--s:12px"></span>
+              <span style="--s:16px"></span><span style="--s:24px"></span><span style="--s:32px"></span><span style="--s:48px"></span>
+            </div>
+            <p class="token-meta">Spacing base-8: 4 · 8 · 12 · 16 · 24 · 32 · 48 px</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PIPELINE ============ -->
+    <section class="section" id="pipeline" aria-labelledby="pipeline-title">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Cách hoạt động</p>
+        <h2 id="pipeline-title" data-reveal>Pipeline 6 bước, không bước nào được bỏ qua</h2>
+        <p class="section-lead" data-reveal>
+          Mỗi skill nhận bàn giao từ bước trước và chỉ bàn giao khi đầu ra đạt checklist
+          riêng. Không có flow "happy path" thiếu đường phục hồi lỗi, không có component
+          thiếu trạng thái.
+        </p>
+        <ol class="pipeline-grid">
+          <li class="step-card" data-reveal>
+            <span class="step-number" aria-hidden="true">01</span>
+            <h3>Phân tích &amp; điều phối</h3>
+            <p class="step-skill">00-ui-orchestrator</p>
+            <p>Phân loại sản phẩm (SaaS, Admin Dashboard, E-commerce, Game HUD…), chọn ma trận nền tảng, xác định scope responsive và khoá aesthetic posture cho cả dự án.</p>
+          </li>
+          <li class="step-card" data-reveal>
+            <span class="step-number" aria-hidden="true">02</span>
+            <h3>Kiến trúc luồng UX</h3>
+            <p class="step-skill">01-ux-flow-architecture</p>
+            <p>Persona &amp; JTBD, sitemap giới hạn 3 cấp, task flow có sẵn error / recovery path và zero state, kiểm toán chống dark pattern.</p>
+          </li>
+          <li class="step-card" data-reveal>
+            <span class="step-number" aria-hidden="true">03</span>
+            <h3>Design system theo token</h3>
+            <p class="step-skill">02-ui-design-system</p>
+            <p>Bảng màu 60-30-10 ánh xạ cả Light / Dark, spacing base-8, typography hỗ trợ tiếng Việt với line-height 1.4–1.6, component đủ 6 trạng thái.</p>
+          </li>
+          <li class="step-card" data-reveal>
+            <span class="step-number" aria-hidden="true">04</span>
+            <h3>Responsive &amp; nền tảng</h3>
+            <p class="step-skill">03-ui-platform-responsive</p>
+            <p>4 breakpoint chuẩn (Mobile, Tablet, PC, Ultrawide), điều hướng thích ứng Bottom Bar → Rail → Sidebar, recipe riêng cho Web, Mobile, Desktop và Game HUD.</p>
+          </li>
+          <li class="step-card" data-reveal>
+            <span class="step-number" aria-hidden="true">05</span>
+            <h3>QA &amp; accessibility</h3>
+            <p class="step-skill">04-ui-ux-qa-review</p>
+            <p>Kiểm toán WCAG 2.2 AA, 10 heuristic của Nielsen, stress test dấu tiếng Việt và zoom 200%, audit phát hiện dấu hiệu giao diện "AI-generate" (AI-tells).</p>
+          </li>
+          <li class="step-card" data-reveal>
+            <span class="step-number" aria-hidden="true">06</span>
+            <h3>Sinh giao diện mẫu</h3>
+            <p class="step-skill">05-ui-example-generator</p>
+            <p>Chỉ sau khi đặc tả <code>system_design.md</code> được duyệt, sinh trang mẫu vanilla HTML/CSS/JS mở được trực tiếp bằng <code>file://</code> — đúng token, đúng breakpoint.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section section-alt" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Bên trong bộ toolkit</p>
+        <h2 id="skills-title" data-reveal>6 skill, mỗi skill một ranh giới rõ ràng</h2>
+        <p class="section-lead" data-reveal>
+          Mô tả gốc của từng skill được lấy nguyên văn từ file <code>SKILL.md</code>
+          trong thư mục <code>.agents/skills</code> của workspace.
+        </p>
+        <div class="skills-grid">
+          <article class="skill-card" data-reveal>
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="skill-id">00</p>
+            <h3>00-ui-orchestrator</h3>
+            <p class="skill-summary">Điều phối toàn bộ quy trình thiết kế UI/UX đa nền tảng: phân tích ý định sản phẩm, chọn nền tảng mục tiêu và tổng hợp đặc tả <code>system_design.md</code> thống nhất.</p>
+            <p class="skill-desc" lang="en">"Coordinate the UI/UX design workflow across platforms (Web, Mobile, Desktop, Game). Analyzes product intent, routes to specialist skills, and produces the unified system_design.md specification."</p>
+          </article>
+
+          <article class="skill-card" data-reveal>
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><circle cx="6" cy="6" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="6" cy="18" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6 8.5v7M8.5 6.6c4 .8 6.7 2.4 7.4 4.4M8.5 17.4c4-.8 6.7-2.4 7.4-4.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <p class="skill-id">01</p>
+            <h3>01-ux-flow-architecture</h3>
+            <p class="skill-summary">Định nghĩa hành trình người dùng, task flow kèm đường phục hồi lỗi, kiến trúc thông tin, cây điều hướng và wireframe UX có đạo đức.</p>
+            <p class="skill-desc" lang="en">"Define user journeys, task flows with error/recovery paths, information architecture, navigation trees, and ethical UX wireframes."</p>
+          </article>
+
+          <article class="skill-card" data-reveal>
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 3v9l6.4 6.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 12H3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            </div>
+            <p class="skill-id">02</p>
+            <h3>02-ui-design-system</h3>
+            <p class="skill-summary">Sinh design system dựa trên token: bảng màu 60-30-10, typography hỗ trợ tiếng Việt, microcopy guidelines và thư viện component đủ 6 trạng thái.</p>
+            <p class="skill-desc" lang="en">"Generate token-based design systems, 60-30-10 color palettes, Vietnamese-ready typography, microcopy guidelines, and full-state component libraries."</p>
+          </article>
+
+          <article class="skill-card" data-reveal>
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M9 9v12" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            </div>
+            <p class="skill-id">03</p>
+            <h3>03-ui-platform-responsive</h3>
+            <p class="skill-summary">Kiến trúc layout responsive đa màn hình (Mobile, Tablet, PC) và công thức giao diện riêng cho Web App, Mobile App, Desktop App và Game UI.</p>
+            <p class="skill-desc" lang="en">"Architect responsive multi-screen layouts (Mobile, Tablet, PC) and specialized interface recipes for Web Apps, Mobile Apps, Desktop Apps, and Game UIs."</p>
+          </article>
+
+          <article class="skill-card" data-reveal>
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><path d="M9 3h6M12 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="14" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 11.5V14l1.8 1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <p class="skill-id">04</p>
+            <h3>04-ui-ux-qa-review</h3>
+            <p class="skill-summary">Kiểm toán UI/UX theo chuẩn WCAG 2.1/2.2 AA, 10 heuristic usability của Nielsen và độ ổn định responsive trong các trường hợp biên.</p>
+            <p class="skill-desc" lang="en">"Audit UI/UX against WCAG 2.1/2.2 AA accessibility standards, Nielsen usability heuristics, and responsive edge-case stability."</p>
+          </article>
+
+          <article class="skill-card" data-reveal>
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="skill-id">05</p>
+            <h3>05-ui-example-generator</h3>
+            <p class="skill-summary">Sinh giao diện mẫu tĩnh chỉ bằng vanilla HTML/CSS/JS từ đặc tả <code>system_design.md</code>, kích hoạt sau khi orchestrator hoàn tất và người dùng đồng ý.</p>
+            <p class="skill-desc" lang="en">"Generate static sample interfaces (vanilla HTML/CSS/JS only) from the synthesized system_design.md specification. Triggered after 00-ui-orchestrator completes and the user explicitly opts in."</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLATFORMS ============ -->
+    <section class="section" id="platforms" aria-labelledby="platforms-title">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Nền tảng được hỗ trợ</p>
+        <h2 id="platforms-title" data-reveal>Một pipeline, năm nền tảng — mỗi nền tảng một công thức riêng</h2>
+        <p class="section-lead" data-reveal>
+          Toolkit không áp một layout duy nhất cho mọi màn hình: ergonomics, input model
+          và ràng buộc vật lý của từng nền tảng được đưa vào ngay từ bước phân tích.
+        </p>
+        <ul class="platform-list">
+          <li class="platform-card" data-reveal>
+            <div class="platform-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><rect x="2.5" y="4" width="19" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 21h7M12 17v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Web App <span class="platform-tag">SaaS · Admin</span></h3>
+            <p>Mật độ thông tin cao, điều hướng bàn phím, bảng dữ liệu sticky header, Command Palette <kbd>Ctrl</kbd>+<kbd>K</kbd> và breadcrumb.</p>
+          </li>
+          <li class="platform-card" data-reveal>
+            <div class="platform-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><rect x="7" y="2.5" width="10" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 18.5h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Mobile App <span class="platform-tag">iOS · Android</span></h3>
+            <p>Thumb Zone đưa hành động chính vào 1/3 dưới màn hình, tôn trọng safe area insets, modal chuyển thành Bottom Sheet vuốt được.</p>
+          </li>
+          <li class="platform-card" data-reveal>
+            <div class="platform-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><rect x="3" y="5" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M1.5 20.5h21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Desktop App <span class="platform-tag">Windows · macOS · Linux</span></h3>
+            <p>Custom window chrome tích hợp tiêu đề và tìm kiếm, context menu chuột phải, status bar và render sắc nét ở DPI 100%–200%.</p>
+          </li>
+          <li class="platform-card" data-reveal>
+            <div class="platform-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6 7h12v10a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V7Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 11h.01M15 11h.01M10 15h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Game Desktop <span class="platform-tag">PC · Console</span></h3>
+            <p>HUD neo 4 góc giữ tâm màn hình trống cho gameplay, safe zone 32–48px, focus ring gamepad với điều hướng D-pad liên tục, scale Ultrawide 21:9.</p>
+          </li>
+          <li class="platform-card" data-reveal>
+            <div class="platform-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false"><rect x="2.5" y="6" width="19" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M14.5 10h4M16.5 8v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Game Mobile <span class="platform-tag">Landscape · Portrait</span></h3>
+            <p>Hai vùng điều khiển bằng ngón cái: joystick ảo dưới trái, nút kỹ năng vòng cung dưới phải, mục tiêu 48–64px với opacity 60–70% và haptic feedback.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">UI Design Toolkit</p>
+      <p class="footer-note">
+        Trang này tự áp dụng đúng triết lý của toolkit: design token 60-30-10,
+        responsive 4 breakpoint, line-height 1.4–1.6 bảo vệ dấu tiếng Việt,
+        tương phản đạt WCAG 2.2 AA.
+      </p>
+      <p class="footer-meta">HTML/CSS/JS thuần · Không build, không CDN, không framework · <span id="footer-year">2026</span></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
